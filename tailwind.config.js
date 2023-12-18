@@ -6,7 +6,7 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extends: {
+    extend: {
       colors: {
         darkCompBg: "#48319D",
         darkDropShadow: "#4A397F"
