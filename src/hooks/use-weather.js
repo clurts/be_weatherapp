@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 axios.defaults.baseURL = "https://api.openweathermap.org/data/2.5"
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY
 
-export default function useWeather({endpoint, lat, lon, city, coords}) {
+export default function useWeather({endpoint, lat, lon, city, coords, lang}) {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [data, setData] = useState(null)
@@ -13,7 +13,7 @@ export default function useWeather({endpoint, lat, lon, city, coords}) {
     async function getData() {
         if (!coords) return
         try {
-            const response = await axios.get(`/${endpoint}?lat=${lat}&lon=${lon}&appid=${API_KEY}`)
+            const response = await axios.get(`/${endpoint}?lat=${lat}&lon=${lon}&appid=${API_KEY}${lang ? `&lang=${lang}` : ''}`)
             console.log(response.data)
             setData(response.data)
         } catch (error) {

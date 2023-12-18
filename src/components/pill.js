@@ -9,7 +9,7 @@ export default function Pill({ time, image, humidity, temp }) {
                 flex flex-col items-center font-semibold
                 drop-shadow-[5px_4px_10px_rgba(0,0,0,0.25)]
                 shadow-inner-[1px_1px_0_rgba(255,255,255,0.25)]">
-                <p className="text-[white] mb-2">{time}</p>
+                <p className="text-white mb-2">{time}</p>
                 <img src="https://placehold.co/32" className="mb-[-.4em]" />
                 <p className="text-sm text-[cyan]">{humidity}</p>
                 <p className="text-[white] mt-2">{temp}&deg;</p>
